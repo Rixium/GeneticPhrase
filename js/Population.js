@@ -76,14 +76,9 @@ Population.prototype.Mutate = function(child) {
 }
 
 Population.prototype.CrossOver = function(parent1, parent2) {
-  let center = parent1.length / 2;
+  let crossOverPoint = Math.floor(Math.random() * parent1.length);
   let child = "";
-  for(let i = 0; i < parent1.length; i++) {
-    if(Math.random() <= 50) {
-      child += parent1[i];
-    } else {
-      child += parent2[i];
-    }
-  }
+  child += parent1.substring(0, crossOverPoint);
+  child += parent2.substring(crossOverPoint, parent2.length);
   return child;
 }
