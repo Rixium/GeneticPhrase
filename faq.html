@@ -23,6 +23,7 @@
           <a id="randomcharacters" class="btn btn-light scroll" style="width: 100%;">Why do random characters keep appearing?</a><br/><br/>
           <a id="populationsize" class="btn btn-light scroll" style="width: 100%;">Is a bigger population better?</a><br/><br/>
           <a id="mutationrate" class="btn btn-light scroll" style="width: 100%;">How about a higher mutation rate?</a><br/><br/>
+          <a id="genes" class="btn btn-light scroll" style="width: 100%;">How do your genes work?</a><br/><br/>
         </div>
       </div>
       <div class="col-md-7">
@@ -47,6 +48,10 @@
             <h4 id="mutationrate_faq">How about a higher mutation rate?</h4>
             <p>This was kinda covered in one of the above questions, but I'll go more in to depth. You could have some really good selections in a generation, with a high fitness, but if the mutation rate is high, then these good selections can quickly become terrible.<br/>
               Usually the mutation rate should be quite low. It is important to have it, because of the possibility of certain genes not appearing in the population, but having it too high can almost make it impossible to find the phrase you want.</p>
+              <h4 id="genes_faq">How do your genes work?</h4>
+              <p>To keep it as simple as possible, the genes are just the letters of the alphabet, a - z, in lower case. Depending on the phrase you use, you may use some characters not present in the gene pool, so before the genetic algorithm runs, those genes get added in to <thead>
+                possible choices for the algorithm, just so we have a chance of getting our phrase.</p>
+              </thead>
         </div>
       </div>
     </div>
