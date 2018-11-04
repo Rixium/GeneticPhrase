@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Genetic Phrase</title>
+    <link rel="stylesheet" href="./css/bootstrap.css"></link>
+    <link rel="stylesheet" href="./css/site.css"></link>
+    <script src="./js/jquery.js" charset="utf-8"></script>
+    <script src="./js/bootstrap.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div class="top-bar">
+    <h1>Genetic Phrase</h1>
+    <h5>by Daniel Pottenger</h5>
+    </div>
+    <div class="container main-body">
+      <div class="row">
+      <div class="col-md-5">
+        <div class="help-nav">
+          <a href="index.html" target="_self" class="btn btn-danger scroll">Back</a><br/><br/>
+          <a id="population" class="btn btn-light scroll" style="width: 100%;">Where does the population come from?</a><br/><br/>
+          <a id="parentphrase" class="btn btn-light scroll" style="width: 100%;">What makes a parent phrase?</a><br/><br/>
+          <a id="randomcharacters" class="btn btn-light scroll" style="width: 100%;">Why do random characters keep appearing?</a><br/><br/>
+          <a id="populationsize" class="btn btn-light scroll" style="width: 100%;">Is a bigger population better?</a><br/><br/>
+          <a id="mutationrate" class="btn btn-light scroll" style="width: 100%;">How about a higher mutation rate?</a><br/><br/>
+        </div>
+      </div>
+      <div class="col-md-7">
+        <div class="help-holder">
+          <h4 id="population_faq">Where does the population come from?</h4>
+          <p>The initial population is completely 'random'. It starts out by creating a string of random characters matching the length of the phrase.<br/>
+            The fun stuff happens after a generation has passed. The new generations are kind of like what happens in the real world, phrases are selected as parents, and then a little baby phrase is born.
+            This happens over and over, until a new population is filled, and then we start all over again.</p>
+          <h4 id="parentphrase_faq">What makes a parent phrase?</h4>
+          <p>Every genetic algorithm has a function that kind of says how good something is. The function in this algorithm looks at the characters of each phrase, and checks to see if it matches the phrase given by you, if it does, then
+            the 'fitness' of that phrase is increased. After this is done for every phrase, we have a little selection process that selects a random phrase based on how 'fit' it is, which means, if we're looking for <b><i>Hello</i></b> and we have
+            <b><i>Heio</i></b> in our population, it has a good chance of being selected, at which point it makes the baby phrase with another selected parent, following the same process.</p>
+          <h4 id="randomcharacters_faq">Why do random characters keep appearing?</h4>
+          <p>In the algorithm we start out with a base population. Depending on the initial size, you can imagine that sometimes certain characters won't appear.<br/>
+            If we take an example, imagine we're trying to find the word <b><i>Hello</i></b>, and we generate a random population of 10 words. It is almost a certainty, that some of the characters of <b><i>Hello</i></b>
+            won't appear at all. To solve this issue, we introduce the concept of mutation, just like in the real world, to give a little bit of variation between generations, we mutate certain genes, or 'characters'.<br/>
+            In the algorithm, this basically means that we have a chance of a mutation occuring, resulting in a completely different character appearing in the place of one of the parents characters. Sadly, this doesn't always work out for the best,
+          and depending on the chance of the mutation occurring, the characters may mutate so often that we never get to the required result.</p>
+          <h4 id="populationsize_faq">Is a bigger population better?</h4>
+          <p>Yes, and no. A bigger population introduces more initial variety in the phrases, but the selection process can take longer. There is usually a point where the benefits of a higher population size drops off, and that point is usually determined by the size
+            of your search space. In the case of this algorithm, the effectiveness usually drops off around 50, but really it is down to what phrase you give.</p>
+            <h4 id="mutationrate_faq">How about a higher mutation rate?</h4>
+            <p>This was kinda covered in one of the above questions, but I'll go more in to depth. You could have some really good selections in a generation, with a high fitness, but if the mutation rate is high, then these good selections can quickly become terrible.<br/>
+              Usually the mutation rate should be quite low. It is important to have it, because of the possibility of certain genes not appearing in the population, but having it too high can almost make it impossible to find the phrase you want.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  $('.scroll').click(function(btn) {
+    $('html, body').animate({
+        scrollTop: $("#" + btn.target.id + "_faq").offset().top
+    }, 750);
+});
+</script>

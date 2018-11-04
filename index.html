@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Genetic Phrase</title>
+    <link rel="stylesheet" href="./css/bootstrap.css"></link>
+    <link rel="stylesheet" href="./css/site.css"></link>
+    <script src="./js/processing.js" charset="utf-8"></script>
+    <script src="./js/jquery.js" charset="utf-8"></script>
+    <script src="./js/Population.js" charset="utf-8"></script>
+    <script src="./js/geneticAlgorithm.js" charset="utf-8"></script>
+    <script src="./js/bootstrap.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div class="top-bar">
+    <h1>Genetic Phrase</h1>
+    <h5>by Daniel Pottenger</h5>
+    </div>
+    <div class="container main-body">
+      <div class="row">
+      <div class="col-md-5">
+        <label>Phrase</label>
+        <input type="text" id="phrase" name="phrase" value="Hello World!" class="form-control">
+        <label>Population Size</label>
+        <input type="number" id="populationSize" name="populationSize" value="200" class="form-control">
+        <label>Mutation Chance</label>
+        <input type="number" step="0.01" max="1" min="0" id="mutationRate" name="mutationRate" value="0.01" class="form-control">
+        <br>
+        <button class="btn btn-primary" onclick="generatePopulation()">Generate Population</button>
+        <br/>
+        <br/>
+        <button class="btn btn-primary" onclick="start()">Run</button> <a href="faq.html" target="_self" class="btn btn-danger">Not Working?</a>
+        <br>
+        <br>
+        <h4>Best Member</h4>
+        <p class="best-member">N/A</p>
+        <h4>Best Fitness</h4>
+        <p class="best-fitness">N/A</p>
+        <h4>Total Generation</h4>
+        <p class="total-generations">N/A</p>
+      </div>
+      <div class="col-md-7">
+        <div class="notification">
+        </div><br/>
+        <table class="table population-table table-bordered">
+          <thead class="thead-dark">
+            <tr>
+            <th style="width:5%;">#</th>
+            <th>Phrase</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+      </div>
+    </div>
+  </body>
+</html>
