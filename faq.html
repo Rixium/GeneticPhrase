@@ -24,6 +24,7 @@
           <a id="populationsize" class="btn btn-light scroll" style="width: 100%;">Is a bigger population better?</a><br/><br/>
           <a id="mutationrate" class="btn btn-light scroll" style="width: 100%;">How about a higher mutation rate?</a><br/><br/>
           <a id="genes" class="btn btn-light scroll" style="width: 100%;">How do your genes work?</a><br/><br/>
+          <a id="crossover" class="btn btn-light scroll" style="width: 100%;">How do you create new phrases?</a><br/><br/>
         </div>
       </div>
       <div class="col-md-7">
@@ -51,6 +52,10 @@
               <h4 id="genes_faq">How do your genes work?</h4>
               <p>To keep it as simple as possible, the genes are just the letters of the alphabet, a - z, in lower case. Depending on the phrase you use, you may use some characters not present in the gene pool, so before the genetic algorithm runs, those genes get added in to <thead>
                 possible choices for the algorithm, just so we have a chance of getting our phrase.</p>
+                <h4 id="crossover_faq">How do you create new phrases?</h4>
+                <p>So, once we have our parent phrases, we run a function using them. This function is similar to what happens in the real world, where we have a crossover of genes. Basically, we select a point within the parent phrase, where we want to cross over the genes, and
+                at that point we take some of the first parent, and some of the second parent, to create the new baby phrase. There are several ways this can happen, but this algorithm uses single-point crossover, where we take on average the first half of parent one, and the second half of parent two. Other methods
+                of crossover include uniform crossover, where we can take a gene here, and a gene there, but this actually made this particular genetic algorithm worse.</p>
               </thead>
         </div>
       </div>
